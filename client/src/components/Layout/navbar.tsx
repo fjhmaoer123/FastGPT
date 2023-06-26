@@ -101,13 +101,13 @@ const Navbar = ({ unread }: { unread: number }) => {
             {...itemStyles}
             {...(item.activeLink.includes(router.pathname)
               ? {
-                  color: '#ffffff ',
-                  backgroundImage: 'linear-gradient(to bottom right, #2152d9 0%, #4e83fd 100%)'
-                }
+                color: '#ffffff ',
+                backgroundImage: 'linear-gradient(to bottom right, #2152d9 0%, #4e83fd 100%)'
+              }
               : {
-                  color: '#9096a5',
-                  backgroundColor: 'transparent'
-                })}
+                color: '#9096a5',
+                backgroundColor: 'transparent'
+              })}
           >
             <MyIcon name={item.icon as any} width={'20px'} height={'20px'} />
             <Box fontSize={'12px'} transform={'scale(0.9)'} mt={'5px'} lineHeight={1}>
@@ -128,7 +128,7 @@ const Navbar = ({ unread }: { unread: number }) => {
       <Box>
         <Link
           as={NextLink}
-          href="https://github.com/c121914yu/FastGPT"
+          href="https://github.com/fjhmaoer123/FastGPT"
           target={'_blank'}
           {...itemStyles}
           color={'#9096a5'}

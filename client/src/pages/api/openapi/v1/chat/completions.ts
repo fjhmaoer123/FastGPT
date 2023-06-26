@@ -19,17 +19,17 @@ import { Types } from 'mongoose';
 import { sensitiveCheck } from '../../text/sensitiveCheck';
 
 export type MessageItemType = ChatCompletionRequestMessage & { _id?: string };
-type FastGptWebChatProps = {
+type MoYanGPTWebChatProps = {
   chatId?: string; // undefined: nonuse history, '': new chat, 'xxxxx': use history
   appId?: string;
 };
-type FastGptShareChatProps = {
+type MoYanGPTShareChatProps = {
   password?: string;
   shareId?: string;
 };
 export type Props = CreateChatCompletionRequest &
-  FastGptWebChatProps &
-  FastGptShareChatProps & {
+  MoYanGPTWebChatProps &
+  MoYanGPTShareChatProps & {
     messages: MessageItemType[];
   };
 export type ChatResponseType = {
@@ -68,9 +68,9 @@ export default withNextCors(async function handler(req: NextApiRequest, res: Nex
       authType
     } = await (shareId
       ? authShareChat({
-          shareId,
-          password
-        })
+        shareId,
+        password
+      })
       : authUser({ req }));
 
     appId = appId ? appId : authAppid;
@@ -132,19 +132,19 @@ export default withNextCors(async function handler(req: NextApiRequest, res: Nex
       return {
         userSystemPrompt: model.chat.systemPrompt
           ? [
-              {
-                obj: ChatRoleEnum.System,
-                value: model.chat.systemPrompt
-              }
-            ]
+            {
+              obj: ChatRoleEnum.System,
+              value: model.chat.systemPrompt
+            }
+          ]
           : [],
         userLimitPrompt: model.chat.limitPrompt
           ? [
-              {
-                obj: ChatRoleEnum.Human,
-                value: model.chat.limitPrompt
-              }
-            ]
+            {
+              obj: ChatRoleEnum.Human,
+              value: model.chat.limitPrompt
+            }
+          ]
           : []
       };
     })();
@@ -273,9 +273,9 @@ export default withNextCors(async function handler(req: NextApiRequest, res: Nex
             value: answer,
             ...(showAppDetail
               ? {
-                  quote: rawSearch,
-                  systemPrompt: `${userSystemPrompt[0]?.value}\n\n${userLimitPrompt[0]?.value}`
-                }
+                quote: rawSearch,
+                systemPrompt: `${userSystemPrompt[0]?.value}\n\n${userLimitPrompt[0]?.value}`
+              }
               : {})
           }
         ],
@@ -290,8 +290,8 @@ export default withNextCors(async function handler(req: NextApiRequest, res: Nex
       res.json({
         ...(showAppDetail
           ? {
-              rawSearch
-            }
+            rawSearch
+          }
           : {}),
         newChatId,
         id: chatId || '',

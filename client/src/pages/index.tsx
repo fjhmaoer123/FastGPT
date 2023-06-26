@@ -32,38 +32,38 @@ const Home = () => {
         window.particlesJS?.('particles-js', {
           particles: {
             number: {
-              value: 40,
+              value: 100, // 粒子数量
               density: {
                 enable: true,
-                value_area: 500
+                value_area: 800
               }
             },
             color: {
-              value: '#4e83fd'
+              value: "#ffd88f" // 粒子颜色
             },
             shape: {
-              type: 'circle',
+              type: "circle", // 粒子形状
               stroke: {
                 width: 0,
-                color: '#000000'
+                color: "#E8CA90"
               },
               polygon: {
                 nb_sides: 5
               }
             },
             opacity: {
-              value: 0.5,
-              random: false,
+              value: 0.5, // 粒子透明度
+              random: true, // 随机透明度
               anim: {
-                enable: false,
-                speed: 0.1,
-                opacity_min: 0.1,
+                enable: true, // 开启动画
+                speed: 1, // 动画速度
+                opacity_min: 0.1, // 最小透明度
                 sync: false
               }
             },
             size: {
-              value: 3,
-              random: true,
+              value: 3, // 粒子大小
+              random: true, // 随机大小
               anim: {
                 enable: false,
                 speed: 10,
@@ -73,74 +73,76 @@ const Home = () => {
             },
             line_linked: {
               enable: true,
-              distance: 150,
-              color: '#adceff',
-              opacity: 0.4,
-              width: 1
+              distance: 80,
+              color: '#f5e6cc',
+              opacity: 0.8,
+              width: 0.6
             },
+
             move: {
-              enable: true,
-              speed: 2,
-              direction: 'none',
-              random: true,
+              enable: true, // 开启移动
+              speed: 0.9, // 移动速度
+              direction: "none", // 移动方向
+              random: true, // 随机移动
               straight: false,
-              out_mode: 'out',
+              out_mode: "out",
               bounce: false,
               attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 1200
+                enable: true,
+                rotateX: 800,
+                rotateY: 1500
               }
             }
           },
           interactivity: {
-            detect_on: 'canvas',
+            detect_on: "canvas",
             events: {
               onhover: {
-                enable: true,
-                mode: 'grab'
+                enable: true, // 开启悬停事件
+                mode: "bubble" // 悬停模式为气泡
               },
               onclick: {
-                enable: true,
-                mode: 'push'
+                enable: true, // 开启点击事件
+                mode: "push" // 点击模式为排斥
               },
               resize: true
             },
             modes: {
               grab: {
-                distance: 140,
+                distance: 200,
                 line_linked: {
-                  opacity: 1
+                  opacity: 0.6
                 }
               },
               bubble: {
-                distance: 400,
-                size: 40,
+                distance: 150, // 气泡距离
+                size: 6, // 气泡大小
                 duration: 2,
-                opacity: 8,
+                opacity: 0.6,
                 speed: 3
               },
               repulse: {
-                distance: 200,
+                distance: 80, // 排斥距离
                 duration: 0.4
               },
               push: {
                 particles_nb: 4
               },
               remove: {
-                particles_nb: 2
+                particles_nb: 3
               }
             }
           },
           retina_detect: true
         });
-      } catch (error) {}
+
+      } catch (error) { }
     }, 500);
   }, [isPc]);
 
   useEffect(() => {
     (async () => {
-      const { data: git } = await axios.get('https://api.github.com/repos/c121914yu/FastGPT');
+      const { data: git } = await axios.get('https://api.github.com/repos/fjhmaoer123/FastGPT');
       setStar(git.stargazers_count);
     })();
   }, []);
@@ -163,67 +165,73 @@ const Home = () => {
         position={'absolute'}
         userSelect={'none'}
       >
-        <Image src="/icon/logo2.png" w={['70px', '120px']} h={['70px', '120px']} alt={''}></Image>
+        <Image src="/icon/logo2.png" w={['90px', '140px']} h={['90px', '140px']} alt={''}></Image>
         <Box
           className={styles.textlg}
           fontWeight={'bold'}
-          fontSize={['40px', '70px']}
+          fontSize={['50px', '80px']}
           letterSpacing={'5px'}
         >
-          FastGpt
+          MoYanGPT
         </Box>
         <Box className={styles.textlg} fontWeight={'bold'} fontSize={['30px', '50px']}>
-          三分钟
-        </Box>
-        <Box className={styles.textlg} fontWeight={'bold'} fontSize={['30px', '50px']}>
-          搭建 AI 知识库
+          AI 智能助理
         </Box>
 
-        <Flex flexDirection={['column', 'row']} my={5}>
+
+        <Flex flexDirection={['column', 'row']} my={9}>
           <Button
-            mr={[0, 5]}
-            mb={[5, 0]}
-            fontSize={['xl', '3xl']}
+            mr={[0, 6]}
+            mb={[6, 0]}
+            fontSize={['3xl', '3xl']}
             h={'auto'}
-            py={[2, 3]}
+            py={[1, 4]}
             variant={'base'}
-            border={'2px solid'}
-            borderColor={'myGray.800'}
+            border={'3px solid'}
+            borderColor={'#E8CA90'}
             transition={'0.3s'}
             _hover={{
-              bg: 'myGray.800',
+              bg: '#E8CA90',
               color: 'white'
             }}
-            leftIcon={<MyIcon name={'git'} w={'20px'} />}
-            onClick={() => window.open('https://github.com/c121914yu/FastGPT', '_blank')}
+            leftIcon={<MyIcon name={'git'} w={'30px'} />}
+            onClick={() => window.open('https://moyancm.com', '_blank')}
+            color={'white'} /* 添加这一行 */
           >
-            Stars {(star / 1000).toFixed(1)}k
+            Moyancm官網
+
           </Button>
           <Button
-            fontSize={['xl', '3xl']}
+            fontSize={['2xl', '4xl']}
             h={'auto'}
             py={[2, 3]}
+            variant={'solid'}
+            border={'3px solid'}
+            borderColor={'#ffd88f'}
+            style={{ background: 'linear-gradient(to bottom right, #E8CA90 0%, #ffd88f 40%, #E8CA90 80%,#E8CA90  100%)' }}
+            transition={'0.3s'}
+            _hover={{
+              bg: '#ffd88f',
+              color: 'white'
+            }}
             onClick={() => router.push(`/model`)}
+            color={'black'} /* 添加这一行 */
           >
-            立即开始
+            Get Started!
           </Button>
+
         </Flex>
+
       </Flex>
 
       <Box w={'100%'} mt={'100vh'} px={[5, 10]} pb={[5, 10]}>
-        <Card p={5} lineHeight={2}>
-          <Markdown source={data} isChatting={false} />
+
+
+        <Card p={2} mt={4} textAlign={'center'} bg={'transparent'}>
+          <Box color={'white'}>Made by MoYanCM Team.</Box>
         </Card>
 
-        <Card p={5} mt={4} textAlign={'center'}>
-          {beianText && (
-            <Link href="https://beian.miit.gov.cn/" target="_blank">
-              {beianText}
-            </Link>
-          )}
 
-          <Box>Made by FastGpt Team.</Box>
-        </Card>
       </Box>
     </Flex>
   );

@@ -1,17 +1,40 @@
 .home {
-  * {
-    position: relative;
+
+  background-color: rgb(19, 20, 20);
+
+  position: relative;
+
+
+  #particles-js {
+    background-color: #000000;
+    /* 修改为黑色 */
+    position: absolute;
+    /* 修改为绝对定位 */
+    width: 100%;
+    /* 添加宽度为100% */
+    height: 100%;
+    /* 添加高度为100% */
+    z-index: -1;
+    /* 修改为负值 */
   }
 
   .textlg {
-    background: linear-gradient(
-      to bottom right,
-      #1237b3 0%,
-      #3370ff 40%,
-      #4e83fd 80%,
-      #85b1ff 100%
-    );
+    /* 设置文字的颜色为渐变色 */
+    background: linear-gradient(to bottom right,
+        #E8CA90 0%,
+        #9B8053 20%,
+        #ffd88f 40%,
+        #9B8053 60%,
+        #ffd88f 80%,
+        #9B8053 100%);
+    /* 让文字的背景颜色裁剪到文字的形状 */
     -webkit-background-clip: text;
+    /* 让文字的填充颜色为透明，显示背景颜色 */
     -webkit-text-fill-color: transparent;
+    /* 设置文字的阴影为扩散，颜色为#979191 */
+
   }
 }
+
+//* 添加这一段代码 */
+//* background-image: linear-gradient(to bottom right, rgb(0, 145, 202), rgb(255, 255, 251));
