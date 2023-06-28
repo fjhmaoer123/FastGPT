@@ -175,7 +175,7 @@ const Home = () => {
           MoYanGPT
         </Box>
         <Box className={styles.textlg} fontWeight={'bold'} fontSize={['30px', '50px']}>
-          AI 智能助理
+          摩延文化檢索平台
         </Box>
 
 

@@ -349,9 +349,8 @@ const Chat = ({ shareId, historyId }: { shareId: string; historyId: string }) =>
         const historyDom = document.getElementById('history');
         if (!historyDom) return;
         const dom = Array.from(historyDom.children).map((child, i) => {
-          const avatar = `<img src="${
-            child.querySelector<HTMLImageElement>('.avatar')?.src
-          }" alt="" />`;
+          const avatar = `<img src="${child.querySelector<HTMLImageElement>('.avatar')?.src
+            }" alt="" />`;
 
           const chatContent = child.querySelector<HTMLDivElement>('.markdown');
 
@@ -624,13 +623,13 @@ const Chat = ({ shareId, historyId }: { shareId: string; historyId: string }) =>
                       as={Box}
                       {...(item.obj === 'AI'
                         ? {
-                            order: 1,
-                            mr: ['6px', 2]
-                          }
+                          order: 1,
+                          mr: ['6px', 2]
+                        }
                         : {
-                            order: 3,
-                            ml: ['6px', 2]
-                          })}
+                          order: 3,
+                          ml: ['6px', 2]
+                        })}
                     >
                       <Avatar
                         src={
@@ -681,7 +680,7 @@ const Chat = ({ shareId, historyId }: { shareId: string; historyId: string }) =>
               </Flex>
             ))}
             {shareChatData.history.length === 0 && (
-              <Empty model={shareChatData.model} showChatProblem={false} />
+              <Empty model={shareChatData.model} showChatProblem={true} />
             )}
           </Box>
         </Box>

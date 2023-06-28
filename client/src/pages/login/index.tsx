@@ -68,52 +68,47 @@ const Login = () => {
 
   return (
     <Flex
-      alignItems={'center'}
-      justifyContent={'center'}
+      alignItems="center"
+      justifyContent={isPc ? 'flex-end' : 'center'}
       className={styles.loginPage}
-      h={'100%'}
-      px={[0, '10vw']}
+      px={[0, '15vw']}
+      height={isPc ? '100vh' : '100%'}
     >
-      <Flex
-        height="100%"
-        w={'100%'}
-        maxW={'1240px'}
-        maxH={['auto', 'max(660px,80vh)']}
-        backgroundColor={'#fff'}
-        alignItems={'center'}
-        justifyContent={'center'}
-        py={[5, 10]}
-        px={'5vw'}
+      <Box
+        flex={`0 0 ${isPc ? '350px' : '100%'}`}
+        height={isPc ? '680px' : '100%'}
+        border="1px"
+        borderColor="gray.200"
+        backgroundColor="#fff"
+        py={isPc ? 35 : 0}
+        px={[8, 8]}
         borderRadius={isPc ? 'md' : 'none'}
-        gap={5}
+        marginLeft={[8, 0]}
+        marginRight={[8, 0]}
+        marginTop={[10, 10]}
+        marginBottom={[10, -5]}
       >
-        {isPc && (
-          <Image
-            src={'/icon/loginLeft.svg'}
-            order={pageType === PageTypeEnum.login ? 0 : 2}
-            flex={'1 0 0'}
-            w="0"
-            maxW={'600px'}
-            height={'100%'}
-            maxH={'450px'}
-            alt=""
-          />
-        )}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: '20px'
+        }}>
+          <Image src="/icon/loginLeft.svg" width="65px" height="auto" alt="" />
+        </div>
 
-        <Box
-          order={1}
-          flex={`0 0 ${isPc ? '400px' : '100%'}`}
-          height={'100%'}
-          border="1px"
-          borderColor="gray.200"
-          py={5}
-          px={10}
-          borderRadius={isPc ? 'md' : 'none'}
-        >
-          <DynamicComponent type={pageType} />
-        </Box>
-      </Flex>
+
+        <DynamicComponent type={pageType} />
+      </Box>
     </Flex>
+
+
+
+
+
+
+
+
+
   );
 };
 
