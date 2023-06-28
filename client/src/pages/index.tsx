@@ -222,7 +222,8 @@ const Home = () => {
 
             Get Started!
 
-        </Flex>
+          </Button >
+
         </Flex >
 
       </Flex >
