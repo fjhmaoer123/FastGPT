@@ -175,7 +175,9 @@ const Home = () => {
           MoYanGPT
         </Box>
         <Box className={styles.textlg} fontWeight={'bold'} fontSize={['30px', '50px']}>
+
           摩延文化檢索平台
+
         </Box>
 
 
@@ -217,12 +219,13 @@ const Home = () => {
             onClick={() => router.push(`/model`)}
             color={'black'} /* 添加这一行 */
           >
+
             Get Started!
-          </Button>
 
         </Flex>
+        </Flex >
 
-      </Flex>
+      </Flex >
 
       <Box w={'100%'} mt={'100vh'} px={[5, 10]} pb={[5, 10]}>
 
@@ -233,7 +236,7 @@ const Home = () => {
 
 
       </Box>
-    </Flex>
+    </Flex >
   );
 };
 

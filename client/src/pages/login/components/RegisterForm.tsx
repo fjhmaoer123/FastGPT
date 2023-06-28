@@ -82,6 +82,7 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
     <>
 
       <Box fontWeight={'bold'} fontSize={'2xl'} textAlign={'center'} color={'#4974f7'} marginTop={6} marginBottom={7}>
+
         注册 MoYanGPT 账号
       </Box>
       <form onSubmit={handleSubmit(onclickRegister)}>
