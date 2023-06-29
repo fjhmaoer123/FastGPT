@@ -11,6 +11,6 @@
 | 文件拆分 | 0.015 |
 
 **其他问题**
-| 交流群 | 小助手 |
-| ----------------------- | -------------------- |
-| ![](https://otnvvf-imgs.oss.laf.run/wxqun300.jpg) | ![](https://otnvvf-imgs.oss.laf.run/wx300.jpg) |
+| 联系我们 | 
+| ----------------------- |
+| ![](https://i.postimg.cc/mkZvdJXg/20230629111438.jpg) |
