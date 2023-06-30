@@ -15,11 +15,7 @@ const list = [
     label: 'AI应用市场',
     link: '/model/share'
   },
-  {
-    icon: 'git',
-    label: 'Git项目地址',
-    link: 'https://github.com/fjhmaoer123/FastGPT'
-  }
+
 ];
 
 const Tools = () => {

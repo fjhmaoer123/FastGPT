@@ -125,9 +125,9 @@ const PhoneSliderBar = ({
                 border={'1px solid transparent'}
                 {...(item._id === modelId
                   ? {
-                      borderColor: 'rgba(255,255,255,0.5)',
-                      backgroundColor: 'rgba(255,255,255,0.1)'
-                    }
+                    borderColor: 'rgba(255,255,255,0.5)',
+                    backgroundColor: 'rgba(255,255,255,0.1)'
+                  }
                   : {})}
                 onClick={async () => {
                   if (item._id === modelId) return;
@@ -156,9 +156,9 @@ const PhoneSliderBar = ({
                 border={'1px solid transparent'}
                 {...(item._id === chatId
                   ? {
-                      borderColor: 'rgba(255,255,255,0.5)',
-                      backgroundColor: 'rgba(255,255,255,0.1)'
-                    }
+                    borderColor: 'rgba(255,255,255,0.5)',
+                    backgroundColor: 'rgba(255,255,255,0.1)'
+                  }
                   : {})}
                 onClick={() => {
                   if (item._id === chatId) return;
@@ -202,7 +202,7 @@ const PhoneSliderBar = ({
       <RenderButton onClick={onOpenWx}>
         <>
           <MyIcon name="wx" fill={'white'} w={'18px'} h={'18px'} mr={4} />
-          交流群
+          联系方式
         </>
       </RenderButton>
 

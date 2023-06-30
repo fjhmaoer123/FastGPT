@@ -70,6 +70,7 @@ const API = ({ modelId }: { modelId: string }) => {
               width: '100%',
               height: '100%'
             }}
+            src="../../../../../../../public/docs/intro.md"
             frameBorder="0"
             onLoad={() => setIsLoaded(true)}
             onError={() => setIsLoaded(true)}
