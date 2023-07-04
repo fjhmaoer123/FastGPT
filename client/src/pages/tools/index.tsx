@@ -12,8 +12,8 @@ const list = [
   },
   {
     icon: 'appStore',
-    label: 'AI应用市场',
-    link: '/model/share'
+    label: '应用',
+    link: '/model'
   },
 
 ];

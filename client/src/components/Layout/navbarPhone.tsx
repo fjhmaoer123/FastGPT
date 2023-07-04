@@ -18,8 +18,8 @@ const NavbarPhone = ({ unread }: { unread: number }) => {
       },
       {
         icon: 'tabbarModel',
-        link: `/model`,
-        activeLink: ['/model'],
+        link: `/model/share`,
+        activeLink: ['/model/share'],
         unread: 0
       },
       {
@@ -60,26 +60,26 @@ const NavbarPhone = ({ unread }: { unread: number }) => {
             px={3}
             {...(item.activeLink.includes(router.asPath)
               ? {
-                  color: '#7089f1'
-                }
+                color: '#7089f1'
+              }
               : {
-                  color: 'myGray.500'
-                })}
+                color: 'myGray.500'
+              })}
             _after={
               item.activeLink.includes(router.asPath)
                 ? {
-                    content: '""',
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%,-50%)',
-                    borderRadius: '50%',
-                    w: '18px',
-                    h: '18px',
-                    bg: ' #6782f1',
-                    filter: 'blur(10px)',
-                    boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.25)'
-                  }
+                  content: '""',
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%,-50%)',
+                  borderRadius: '50%',
+                  w: '18px',
+                  h: '18px',
+                  bg: ' #6782f1',
+                  filter: 'blur(10px)',
+                  boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.25)'
+                }
                 : {}
             }
             onClick={() => {

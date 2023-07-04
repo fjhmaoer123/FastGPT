@@ -73,10 +73,10 @@ const Home = () => {
             },
             line_linked: {
               enable: true,
-              distance: 80,
+              distance: 90,
               color: '#f5e6cc',
               opacity: 0.8,
-              width: 0.6
+              width: 0.7
             },
 
             move: {
@@ -89,8 +89,8 @@ const Home = () => {
               bounce: false,
               attract: {
                 enable: true,
-                rotateX: 800,
-                rotateY: 1500
+                rotateX: 900,
+                rotateY: 1600
               }
             }
           },
@@ -116,17 +116,17 @@ const Home = () => {
               },
               bubble: {
                 distance: 150, // 气泡距离
-                size: 6, // 气泡大小
+                size: 8, // 气泡大小
                 duration: 2,
                 opacity: 0.6,
                 speed: 3
               },
               repulse: {
                 distance: 80, // 排斥距离
-                duration: 0.4
+                duration: 0.5
               },
               push: {
-                particles_nb: 4
+                particles_nb: 5
               },
               remove: {
                 particles_nb: 3
@@ -216,7 +216,7 @@ const Home = () => {
               bg: '#ffd88f',
               color: 'white'
             }}
-            onClick={() => router.push(`/model`)}
+            onClick={() => router.push(`/model/share`)}
             color={'black'} /* 添加这一行 */
           >
 

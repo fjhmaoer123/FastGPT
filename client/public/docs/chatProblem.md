@@ -13,4 +13,4 @@
 **其他问题**
 | 联系我们 | 
 | ----------------------- |
-| ![](https://i.postimg.cc/mkZvdJXg/20230629111438.jpg) |
+| ![](https://www.moyancm.com/image/wxcontact.jpeg) |

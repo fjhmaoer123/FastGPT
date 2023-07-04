@@ -83,7 +83,7 @@ const PhoneSliderBar = ({
         <Tabs
           w={'140px'}
           list={[
-            { label: '应用', id: TabEnum.app },
+            { label: '官方AI', id: TabEnum.app },
             { label: '历史记录', id: TabEnum.history }
           ]}
           size={'sm'}

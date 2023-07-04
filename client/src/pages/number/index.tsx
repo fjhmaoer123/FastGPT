@@ -79,6 +79,10 @@ const NumberSetting = ({ tableType }: { tableType: `${TableEnum}` }) => {
     multiple: false
   });
 
+  const onclickContactService = useCallback(() => {
+    onOpenWxConcat();
+  }, [onOpenWxConcat]);
+
   const onclickSave = useCallback(
     async (data: UserUpdateParams) => {
       setLoading(true);
@@ -192,6 +196,13 @@ const NumberSetting = ({ tableType }: { tableType: `${TableEnum}` }) => {
               <Button size={['xs', 'sm']} w={['70px', '80px']} ml={5} onClick={onOpenPayModal}>
                 充值
               </Button>
+              <Button size={['xs', 'sm']} w={['70px', '120px']} ml={5} onClick={onclickContactService}>
+
+
+
+                支付问题联系客服
+              </Button>
+
             </Flex>
             <Box fontSize={'xs'} color={'blackAlpha.500'}>
               如果填写了自己的 openai 账号，网页上 openai 模型对话不会计费。
@@ -284,3 +295,4 @@ NumberSetting.getInitialProps = ({ query, req }: any) => {
     tableType: query?.type || TableEnum.bill
   };
 };
+

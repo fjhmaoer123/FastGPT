@@ -85,6 +85,7 @@ const PayModal = ({ onClose }: { onClose: () => void }) => {
           {!payId && <ModalCloseButton />}
 
           <ModalBody py={0}>
+
             {!payId && (
               <>
                 <Grid gridTemplateColumns={'repeat(4,1fr)'} gridGap={5} mb={4}>
@@ -126,23 +127,32 @@ const PayModal = ({ onClose }: { onClose: () => void }) => {
               {payId && <Box mb={3}>请微信扫码支付: {inputVal}元，请勿关闭页面</Box>}
               <Box id={'payQRCode'} display={'inline-block'}></Box>
             </Box>
+            <Box display="flex" justifyContent="flex-end" mt={3}>
+
+            </Box>
           </ModalBody>
 
           <ModalFooter>
             {!payId && (
               <>
-                <Button variant={'base'} onClick={onClose}>
-                  取消
-                </Button>
                 <Button
                   ml={3}
+                  mr={2} // 添加这一行来设置右边距
                   isLoading={loading}
                   isDisabled={!inputVal || inputVal === 0}
                   onClick={handleClickPay}
                 >
                   获取充值二维码
                 </Button>
+                <Button variant={'base'} onClick={onClose}>
+                  取消
+                </Button>
               </>
+            )}
+            {payId && (
+              <Button variant={'base'} onClick={onClose}>
+                取消
+              </Button>
             )}
           </ModalFooter>
         </ModalContent>

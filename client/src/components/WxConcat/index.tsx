@@ -22,7 +22,7 @@ const WxConcat = ({ onClose }: { onClose: () => void }) => {
         <ModalBody textAlign={'center'}>
           <Image
             style={{ margin: 'auto' }}
-            src={'https://i.postimg.cc/mkZvdJXg/20230629111438.jpg'}
+            src={'https://www.moyancm.com/image/wxcontact.jpeg'}
             width={'200px'}
             height={'200px'}
             alt=""

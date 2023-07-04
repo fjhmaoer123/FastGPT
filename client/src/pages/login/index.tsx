@@ -33,7 +33,7 @@ const Login = () => {
 
       setUserInfo(res.user);
       setTimeout(() => {
-        router.push(lastRoute ? decodeURIComponent(lastRoute) : '/model');
+        router.push(lastRoute ? decodeURIComponent(lastRoute) : '/model/share');
       }, 100);
     },
     [
@@ -63,7 +63,7 @@ const Login = () => {
   }
 
   useEffect(() => {
-    router.prefetch('/model');
+    router.prefetch('/model/share');
   }, [router]);
 
   return (

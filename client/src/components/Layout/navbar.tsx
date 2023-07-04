@@ -21,16 +21,10 @@ const Navbar = ({ unread }: { unread: number }) => {
   const navbarList = useMemo(
     () => [
       {
-        label: '聊天',
-        icon: 'chat',
-        link: `/chat?modelId=${lastChatModelId}&chatId=${lastChatId}`,
-        activeLink: ['/chat']
-      },
-      {
-        label: '应用',
-        icon: 'model',
-        link: `/model?modelId=${lastModelId}`,
-        activeLink: ['/model']
+        label: '账号',
+        icon: 'user',
+        link: '/number',
+        activeLink: ['/number']
       },
       {
         label: '知识库',
@@ -39,16 +33,22 @@ const Navbar = ({ unread }: { unread: number }) => {
         activeLink: ['/kb']
       },
       {
-        label: '市场',
+        label: '应用',
+        icon: 'model',
+        link: `/model?modelId=${lastModelId}`,
+        activeLink: ['/model']
+      },
+      {
+        label: '官方AI',
         icon: 'appStore',
         link: '/model/share',
         activeLink: ['/model/share']
       },
       {
-        label: '账号',
-        icon: 'user',
-        link: '/number',
-        activeLink: ['/number']
+        label: '聊天',
+        icon: 'chat',
+        link: `/chat?modelId=${lastChatModelId}&chatId=${lastChatId}`,
+        activeLink: ['/chat']
       }
     ],
     [lastChatId, lastChatModelId, lastModelId]
@@ -128,7 +128,7 @@ const Navbar = ({ unread }: { unread: number }) => {
       <Box>
         <Link
           as={NextLink}
-          href="https://github.com/fjhmaoer123/FastGPT"
+          href="https://moyancm.com"
           target={'_blank'}
           {...itemStyles}
           color={'#9096a5'}
