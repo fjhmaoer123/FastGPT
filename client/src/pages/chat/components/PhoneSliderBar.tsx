@@ -34,7 +34,7 @@ const PhoneSliderBar = ({
   onClose: () => void;
 }) => {
   const router = useRouter();
-  const [currentTab, setCurrentTab] = useState(TabEnum.app);
+  const [currentTab, setCurrentTab] = useState(TabEnum.history);
   const { myModels, myCollectionModels, loadMyModels } = useUserStore();
   const { isOpen: isOpenWx, onOpen: onOpenWx, onClose: onCloseWx } = useDisclosure();
 
