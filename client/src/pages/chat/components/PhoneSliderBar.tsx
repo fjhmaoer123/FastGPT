@@ -81,9 +81,8 @@ const PhoneSliderBar = ({
     >
       <Flex mb={2} alignItems={'center'} justifyContent={'space-between'} px={2}>
         <Tabs
-          w={'140px'}
+          w={'90px'}
           list={[
-            { label: '官方AI', id: TabEnum.app },
             { label: '历史记录', id: TabEnum.history }
           ]}
           size={'sm'}
@@ -91,58 +90,24 @@ const PhoneSliderBar = ({
           onChange={(e: any) => setCurrentTab(e)}
         />
         {/* 新对话 */}
-        {currentTab === TabEnum.app && (
-          <Button
-            size={'sm'}
-            variant={'base'}
-            color={'white'}
-            leftIcon={<AddIcon />}
-            onClick={() => {
-              router.replace(`/chat?modelId=${modelId}`);
-              onClose();
-            }}
-          >
-            新对话
-          </Button>
-        )}
+        <Button
+          w={'100px'}
+          size={'sm'}
+          variant={'base'}
+          color={'white'}
+          leftIcon={<AddIcon />}
+          onClick={() => {
+            router.replace(`/chat?modelId=${modelId}`);
+            onClose();
+          }}
+        >
+          新对话
+        </Button>
+
       </Flex>
       {/* 我的模型 & 历史记录 折叠框*/}
       <Box flex={'1 0 0'} px={3} h={0} overflowY={'auto'}>
-        {currentTab === TabEnum.app && (
-          <>
-            {models.map((item) => (
-              <Flex
-                key={item._id}
-                alignItems={'center'}
-                p={3}
-                borderRadius={'md'}
-                mb={2}
-                cursor={'pointer'}
-                _hover={{
-                  backgroundColor: 'rgba(255,255,255,0.1)'
-                }}
-                fontSize={'xs'}
-                border={'1px solid transparent'}
-                {...(item._id === modelId
-                  ? {
-                    borderColor: 'rgba(255,255,255,0.5)',
-                    backgroundColor: 'rgba(255,255,255,0.1)'
-                  }
-                  : {})}
-                onClick={async () => {
-                  if (item._id === modelId) return;
-                  router.replace(`/chat?modelId=${item._id}`);
-                  onClose();
-                }}
-              >
-                <Avatar src={item.avatar} mr={2} w={'18px'} h={'18px'} />
-                <Box className={'textEllipsis'} flex={'1 0 0'} w={0}>
-                  {item.name}
-                </Box>
-              </Flex>
-            ))}
-          </>
-        )}
+
         {currentTab === TabEnum.history && (
           <>
             {history.map((item) => (
@@ -193,7 +158,7 @@ const PhoneSliderBar = ({
 
       <Divider my={3} colorScheme={useColorModeValue('gray', 'white')} />
 
-      <RenderButton onClick={() => router.push('/model')}>
+      <RenderButton onClick={() => router.push('/model/share')}>
         <>
           <MyIcon name="out" fill={'white'} w={'18px'} h={'18px'} mr={4} />
           退出聊天

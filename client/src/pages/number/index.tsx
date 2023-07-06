@@ -196,11 +196,8 @@ const NumberSetting = ({ tableType }: { tableType: `${TableEnum}` }) => {
               <Button size={['xs', 'sm']} w={['70px', '80px']} ml={5} onClick={onOpenPayModal}>
                 充值
               </Button>
-              <Button size={['xs', 'sm']} w={['70px', '120px']} ml={5} onClick={onclickContactService}>
-
-
-
-                支付问题联系客服
+              <Button size={['xs', 'sm']} w={['70px', '90px']} ml={5} onClick={onclickContactService}>
+                联系客服
               </Button>
 
             </Flex>

@@ -51,14 +51,14 @@ const Tabs = ({ list, size = 'md', activeId, onChange, ...props }: Props) => {
           textAlign={'center'}
           {...(activeId === item.id
             ? {
-                boxShadow: '0px 2px 2px rgba(137, 156, 171, 0.25)',
-                backgroundImage: theme.lgColor.primary2,
-                color: 'white',
-                cursor: 'default'
-              }
+              boxShadow: '0px 2px 2px rgba(137, 156, 171, 0.25)',
+              backgroundImage: theme.lgColor.primary2,
+              color: 'white',
+              cursor: 'default'
+            }
             : {
-                cursor: 'pointer'
-              })}
+              cursor: 'pointer'
+            })}
           onClick={() => {
             if (activeId === item.id) return;
             onChange(item.id);
